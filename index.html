@@ -3,14 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zachary Smith - Resume</title>
-    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide-react@0.263.1"></script>
+    <title>Zachary Smith - Mechanical Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
 </head>
-<body>
-    <div id="root"></div>
-    <script src="Resume.js"></script>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 text-white fixed w-full z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold">Zachary Smith</div>
+                <div class="space-x-6">
+                    <a href="#about" class="hover:text-gray-300">About</a>
+                    <a href="#projects" class="hover:text-gray-300">Projects</a>
+                    <a href="#skills" class="hover:text-gray-300">Skills</a>
+                    <a href="#education" class="hover:text-gray-300">Education</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-24 pb-12 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4">Zachary Smith</h1>
+            <p class="text-xl mb-6">Mechanical Engineering Graduate</p>
+            <div class="flex justify-center space-x-4">
+                <a href="mailto:zsmithwk@outlook.com" class="bg-white text-blue-800 px-6 py-2 rounded-full hover:bg-gray-100">Contact Me</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Experienced Mechanical Engineering graduate with a strong foundation in electronics, automation, mechanical design and fluid mechanics. Skilled in AutoCAD, SolidWorks, Ansys, MATLAB, and Python, with deep practical workshop experience.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div>
+                        <h3 class="font-bold mb-2">Contact Information</h3>
+                        <p>📍 Edinburgh</p>
+                        <p>📧 zsmithwk@outlook.com</p>
+                        <p>📱 07521468923</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-2">Key Achievements</h3>
+                        <ul class="list-disc list-inside">
+                            <li>Electronics (91%)</li>
+                            <li>Mathematical Modelling (85%)</li>
+                            <li>CREST Gold Award Winner</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Cards -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Bridge Pier Analysis</h3>
+                        <p class="text-gray-600">Investigated fluid-structure interactions using custom sensor arrays and processed 90,000+ data points using MATLAB/Python.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Military Tow Hook Design</h3>
+                        <p class="text-gray-600">Optimized tow hook design using ANSYS Workbench, achieving 15% weight reduction while maintaining military specifications.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Liquid-Cooled PC Case</h3>
+                        <p class="text-gray-600">Developed custom cooling solution integrating aquarium features, optimizing thermal performance and aesthetics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="font-bold text-lg mb-4">Software & Programming</h3>
+                    <ul class="space-y-2">
+                        <li>SolidWorks</li>
+                        <li>AutoCAD</li>
+                        <li>MATLAB</li>
+                        <li>Python</li>
+                        <li>ANSYS</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="font-bold text-lg mb-4">Engineering & Design</h3>
+                    <ul class="space-y-2">
+                        <li>FEA</li>
+                        <li>CFD</li>
+                        <li>Thermal Analysis</li>
+                        <li>Product Development</li>
+                        <li>Mechanical Design</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="font-bold text-lg mb-4">Manufacturing</h3>
+                    <ul class="space-y-2">
+                        <li>CNC Machining</li>
+                        <li>3D Printing</li>
+                        <li>Laser Cutting</li>
+                        <li>Electronics Assembly</li>
+                        <li>Prototyping</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="font-bold text-lg mb-4">Professional Skills</h3>
+                    <ul class="space-y-2">
+                        <li>Project Management</li>
+                        <li>Technical Documentation</li>
+                        <li>Team Leadership</li>
+                        <li>Problem Solving</li>
+                        <li>Communication</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Education</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-xl font-bold mb-4">University of Exeter</h3>
+                <p class="text-gray-600 mb-4">BEng Mechanical Engineering (2:1)</p>
+                <p class="font-bold mb-2">Key Modules:</p>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <li>Electronics (91%)</li>
+                    <li>Mathematical Modelling (85%)</li>
+                    <li>Thermodynamics (79%)</li>
+                    <li>FEA (79%)</li>
+                    <li>Engineering Mathematics (77%)</li>
+                    <li>Materials (74%)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">© 2024 Zachary Smith. All rights reserved.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="mailto:zsmithwk@outlook.com" class="hover:text-gray-300">Email</a>
+                <a href="https://www.linkedin.com/in/z--smith/" class="hover:text-gray-300">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
