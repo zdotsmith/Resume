@@ -150,6 +150,20 @@
             margin-bottom: 1rem;
         }
 
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -171,6 +185,10 @@
 
             .section {
                 padding: 1.5rem;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -197,6 +215,10 @@
             <h2 class="section-title">Dissertation Project</h2>
             <div class="project">
                 <h3 class="project-title">Woody Debris Collision Forces on Bridge Piers</h3>
+                <div class="image-gallery">
+                    <img src="flume 1.png" alt="Flume Testing Setup" class="project-image">
+                    <img src="flume 2.png" alt="Flume Testing Results" class="project-image">
+                </div>
                 <div class="project-content">
                     <p>Conducted comprehensive research investigating forces exerted by woody debris collisions on bridge piers during flooding events. Utilized SolidWorks for 3D modeling and printing of scaled bridge pier models. Implemented sophisticated data collection using load cells and applied statistical analysis through MATLAB and Python. Key findings revealed linear relationships between flow velocity and peak forces, with quadratic trends in drag force measurements.</p>
                     <p>Skills demonstrated: Research methodology, experimental design, data analysis, 3D modeling, statistical analysis, technical writing.</p>
@@ -217,6 +239,7 @@
 
             <div class="project">
                 <h3 class="project-title">Arduino-Based Fire Alarm System</h3>
+                <img src="fire alarm.png" alt="Arduino-Based Fire Alarm System" class="project-image">
                 <div class="project-content">
                     <p>Engineered comprehensive sensor-display system using Arduino Uno. Developed embedded C++ firmware for real-time sensor processing. Designed and implemented custom potential divider circuits and LCD interface. Demonstrated expertise in embedded systems, circuit design, and hardware programming.</p>
                 </div>
@@ -224,6 +247,7 @@
 
             <div class="project">
                 <h3 class="project-title">Pelton Wheel Design</h3>
+                <img src="pelton wheel.png" alt="Pelton Wheel Design" class="project-image">
                 <div class="project-content">
                     <p>Developed a Pelton wheel turbine from theoretical calculations to manufacture. Applied fluid dynamics principles for optimization of bucket geometry. Utilized 3D printing for complex curved components. Successfully demonstrated conversion of fluid power to kinetic energy.</p>
                 </div>
@@ -231,6 +255,11 @@
 
             <div class="project">
                 <h3 class="project-title">Liquid-Cooled Computer Case</h3>
+                <div class="image-gallery">
+                    <img src="computer case.png" alt="Liquid-Cooled Computer Case Design" class="project-image">
+                    <img src="computer case 1.png" alt="Liquid-Cooled Computer Case Implementation" class="project-image">
+                    <img src="desk 1.png" alt="Complete Setup" class="project-image">
+                </div>
                 <div class="project-content">
                     <p>Designed custom liquid-cooled computer case with aquarium integration. Conducted thermal management analysis using SolidWorks. Implemented 3D printing for prototype components. Exceeded thermal performance specifications while maintaining aesthetic objectives.</p>
                 </div>
