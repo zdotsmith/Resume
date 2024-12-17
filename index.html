@@ -3,316 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zachary Smith - Mechanical Engineer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <title>Zachary Smith - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Add a bold underline to section headings */
-        .section-heading {
-            font-size: 2.25rem;
-            font-weight: 700;
-            border-bottom: 4px solid #1a56db;
-            padding-bottom: 0.5rem;
-            display: inline-block;
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #141419;
+            --accent: #64ffda;
+            --text-primary: #e6e6e6;
+            --text-secondary: #8892b0;
+            --gradient-start: #1a1f3c;
+            --gradient-end: #2d1a3c;
         }
 
-        /* Increase the spacing between project cards */
-        .project-card {
-            margin-bottom: 2rem;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Add a box shadow to project cards on hover */
-        .project-card:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
         }
 
-        /* Darken the header background */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
         .header {
-            background: linear-gradient(to right, #1a53db, #0d8488);
+            background: #1a1a1a;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: #ffffff;
+            line-height: 1.4;
+            padding-bottom: 5px;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .title {
+            font-size: 1.25rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .contact {
+            text-align: right;
+            font-size: 1.1rem;
+        }
+
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .contact a:hover {
+            opacity: 0.8;
+        }
+
+        .section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .section-title {
+            color: var(--accent);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 0.5rem;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+
+        .project {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+
+        .project:hover {
+            transform: translateY(-2px);
+        }
+
+        .project-title {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 0.3px;
+        }
+
+        .project-content {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .project-media {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        figure {
+            margin: 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 0.75rem;
+            transition: transform 0.2s;
+        }
+
+        figure:hover {
+            transform: translateY(-2px);
+        }
+
+        figure img {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            max-height: 250px;
+            border-radius: 4px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        figcaption {
+            margin-top: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact {
+                text-align: center;
+                margin-top: 1.5rem;
+            }
+
+            .name {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <!-- Navigation -->
-    <nav class="bg-gray-800 text-white fixed w-full z-10">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <div class="text-xl font-bold">Zachary Smith</div>
-                <div class="space-x-6">
-                    <a href="#about" class="hover:text-gray-300">About</a>
-                    <a href="#projects" class="hover:text-gray-300">Projects</a>
-                    <a href="#skills" class="hover:text-gray-300">Skills</a>
-                    <a href="#education" class="hover:text-gray-300">Education</a>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <div class="name">Zachary Smith</div>
+                    <div class="title">Project Portfolio</div>
                 </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="pt-24 pb-12 header text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl font-bold mb-4">Zachary Smith</h1>
-            <p class="text-xl mb-6">Mechanical Engineering Graduate</p>
-            <div class="flex justify-center space-x-4">
-                <a href="mailto:zsmithwk@outlook.com" class="bg-white text-blue-800 px-6 py-2 rounded-full hover:bg-gray-100">Contact Me</a>
+                <div class="contact">
+                    <p>Edinburgh</p>
+                    <p><a href="mailto:zsmithwk@outlook.com">zsmithwk@outlook.com</a></p>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center section-heading">About Me</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <p class="text-gray-700 leading-relaxed mb-4">
-                    Resilient and adaptable Mechanical Engineering graduate with proven expertise in electronics, automation, mechanical design and fluid mechanics. Led multiple end-to-end projects including defense specification analysis, fluid dynamics research, and thermal system design. Demonstrated exceptional analytical capabilities through top academic performance in Electronics (91%) and Mathematical Modelling (85%). Currently pursuing interests in machine learning and generative AI while maintaining continuous professional development.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                    <div>
-                        <h3 class="font-bold mb-2">Contact Information</h3>
-                        <p>📍 Edinburgh</p>
-                        <p>📧 zsmithwk@outlook.com</p>
-                    </div>
-                    <div>
-                        <h3 class="font-bold mb-2">Key Achievements</h3>
-                        <ul class="list-disc list-inside">
-                            <li>Electronics (91%)</li>
-                            <li>Mathematical Modelling (85%)</li>
-                            <li>CREST Gold Award Winner</li>
-                        </ul>
-                    </div>
+    <main class="container">
+        <section class="section">
+            <h2 class="section-title">Dissertation Project</h2>
+            <div class="project">
+                <h3 class="project-title">Woody Debris Collision Forces on Bridge Piers</h3>
+    <div class="project-media">
+        <figure>
+            <img src="flume 1.png" alt="Flume Testing Setup">
+            <figcaption>Experimental flume setup with bridge pier model</figcaption>
+        </figure>
+        <figure>
+            <img src="flume 2.png" alt="Flume Testing Results">
+            <figcaption>Data collection during flow testing</figcaption>
+        </figure>
+    </div>
+    <div class="project-content">
+        <h4>Research Overview</h4>
+        <p>For my final year dissertation, I investigated the forces exerted by woody debris collisions on bridge piers during flooding events. This research aimed to improve our understanding of bridge durability and enhance the accuracy of failure predictions in flood-prone areas. The project's importance lies in its potential to inform bridge design and maintenance strategies, ultimately contributing to more resilient infrastructure.</p>
+        
+        <h4>Methodology</h4>
+        <p>I began by conducting a thorough literature review, gathering information from various sources on woody debris behaviour, bridge engineering, and fluid dynamics. This provided a solid theoretical foundation for the experimental phase. Using SolidWorks, I designed a scaled bridge pier model which I then 3D printed for use in flume experiments. This approach allowed me to conduct controlled experiments under various flow conditions, debris masses, and collision angles.</p>
+        
+        <h4>Data Collection & Analysis</h4>
+        <p>To collect data, I used a load cell to measure impact and drag forces under different flow rates. I then applied statistical and dimensional analysis methods, including Froude and Reynolds numbers, to ensure accuracy and extrapolate results to real-world scenarios. For data analysis and visualisation, I utilised MATLAB and Python, demonstrating my proficiency with industry-standard software tools.</p>
+        
+        <h4>Key Findings</h4>
+        <p>My research findings revealed both linear and quadratic trends in the forces experienced by bridge piers during debris collisions. Notably, I identified a linear relationship between flow velocity and peak forces, while observing quadratic trends between flow velocity and drag force. Interestingly, the observed peak forces were lower than initially predicted, suggesting potential limitations in assumptions and highlighting areas for further research.</p>
+        
+        <h4>Skills Demonstrated</h4>
+        <p>This dissertation project allowed me to demonstrate my research capabilities, analytical thinking, technical expertise, and ability to effectively communicate complex engineering concepts. It also highlighted my problem-solving skills and attention to detail throughout the experimental process. It also demonstrated my ability to design and execute experiments, analyse data, and draw meaningful conclusions from complex datasets. The insights gained from this study contribute to the broader field of bridge safety and infrastructure resilience, with potential applications in improving bridge design and maintenance strategies in flood-prone areas.</p>
+    </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Engineering Projects</h2>
+            
+            <div class="project">
+                <h3 class="project-title">Military Tow Hook Redesign</h3>
+                <div class="project-media">
+                    <figure>
+                        <img src="hook.png" alt="Military Tow Hook ANSYS Analysis">
+                        <figcaption>ANSYS stress analysis of optimized tow hook design</figcaption>
+                    </figure>
+                </div>
+                <div class="project-content">
+                    <p>Led comprehensive structural analysis project of a tow hook assembly utilising ANSYS Workbench, focusing on critical stress distribution and deformation behaviour. Performed detailed mesh refinement studies to accurately identify high-stress regions and implemented advanced topology optimization techniques to enhance structural performance. Executed thorough validation processes against military specifications, ensuring the optimised design maintained structural integrity under maximum load conditions. Successfully delivered design modifications that balanced weight reduction with mechanical strength requirements, demonstrating expertise in FEA simulation, mechanical design optimization, and compliance verification.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center section-heading">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Featured Projects -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-4">Bridge Pier Analysis</h3>
-                        <ul class="space-y-2 text-gray-600">
-                            <li>• Led experimental investigation with custom sensor array</li>
-                            <li>• Processed 90,000+ data points, revealing novel flow-force relationships</li>
-                            <li>• Results challenged existing theoretical models</li>
-                            <li>• Published comprehensive technical documentation</li>
-                        </ul>
-                    </div>
+            <div class="project">
+                <h3 class="project-title">Arduino-Based Fire Alarm System</h3>
+                <div class="project-media">
+                    <figure>
+                        <img src="fire alarm.png" alt="Arduino-Based Fire Alarm System">
+                        <figcaption>Complete fire alarm system with Arduino integration</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="circuit sketch.png" alt="Arduino-Based Fire Alarm System">
+                        <figcaption>Arduino Uno Circuit Diagram: Traffic Light System with IR Sensor, LCD Display (TC1602A), and Buzzer. Components connected via Digital I/O pins, featuring LED traffic lights (R/Y/G), IR sensor with +5V power, and LCD interface with contrast control.</figcaption>
+                    </figure>
                 </div>
-
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-4">Military Tow Hook Redesign</h3>
-                        <ul class="space-y-2 text-gray-600">
-                            <li>• Optimized design with ANSYS Workbench, achieving 15% weight reduction</li>
-                            <li>• Performed FEA validation to military specifications</li>
-                            <li>• Developed complete manufacturing documentation</li>
-                            <li>• Eliminated stress concentrations in critical regions</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-4">Liquid-Cooled PC Case</h3>
-                        <ul class="space-y-2 text-gray-600">
-                            <li>• Led end-to-end development integrating liquid cooling with aquarium</li>
-                            <li>• Optimized thermal performance through CAD and prototyping</li>
-                            <li>• Exceeded client specifications for cooling and noise</li>
-                            <li>• Balanced thermal efficiency with aesthetics</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-4">Pelton Wheel Turbine</h3>
-                        <ul class="space-y-2 text-gray-600">
-                            <li>• Designed functional turbine system using SolidWorks</li>
-                            <li>• Optimized geometry through CFD analysis</li>
-                            <li>• Developed innovative 3D printing solutions</li>
-                            <li>• Successfully validated through performance testing</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-4">Arduino Fire Detection</h3>
-                        <ul class="space-y-2 text-gray-600">
-                            <li>• Engineered complete safety system with sensors</li>
-                            <li>• Developed C++ code for processing and alerts</li>
-                            <li>• Implemented fail-safe system diagnostics</li>
-                            <li>• Resolved hardware-software integration challenges</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-4">Trading Bot & Security Projects</h3>
-                        <ul class="space-y-2 text-gray-600">
-                            <li>• Developed automated trading system with Python</li>
-                            <li>• Led 'The Protector' security system team (CREST Gold Award)</li>
-                            <li>• Contributed to Rampaging Chariots robotics with Leonardo</li>
-                            <li>• Implemented comprehensive monitoring systems</li>
-                        </ul>
-                    </div>
+                <div class="project-content">
+                    <p>Engineered and implemented a comprehensive sensor-display system utilising Arduino Uno microcontroller technology. Designed and assembled hardware integration combining infrared sensor and LCD display components, while optimising sensor performance through custom potential divider circuit design and calibration. Developed and implemented C++ programming in Arduino IDE to enable real-time sensor data processing and seamless display control. Successfully troubleshooting hardware-software interfaces throughout development, demonstrating strong technical problem-solving abilities and practical expertise in embedded systems, circuit design, and hardware programming.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center section-heading">Technical Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="font-bold text-lg mb-4">Software & Programming</h3>
-                    <ul class="space-y-2">
-                        <li class="font-semibold">CAD/CAM:</li>
-                        <li class="pl-4">SolidWorks, AutoCAD, SketchUp, Blender, ANSYS</li>
-                        <li class="font-semibold">Analysis:</li>
-                        <li class="pl-4">MATLAB, Python (NumPy, Pandas, Matplotlib), C/C++</li>
-                        <li class="font-semibold">Electronics:</li>
-                        <li class="pl-4">Arduino IDE, Picoscope, Git Version Control</li>
-                        <li class="font-semibold">Data Analysis:</li>
-                        <li class="pl-4">Statistical analysis, visualization, time series analysis</li>
-                    </ul>
+            <div class="project">
+                <h3 class="project-title">Pelton Wheel Design</h3>
+                <div class="project-media">
+                    <figure>
+                        <img src="pelton wheel.png" alt="Pelton Wheel Design">
+                        <figcaption>3D printed Pelton wheel with optimized bucket geometry</figcaption>
+                    </figure>
                 </div>
-
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="font-bold text-lg mb-4">Engineering & Design</h3>
-                    <ul class="space-y-2">
-                        <li class="font-semibold">Structural Analysis:</li>
-                        <li class="pl-4">FEA, stress analysis, fatigue analysis</li>
-                        <li class="font-semibold">Fluid Systems:</li>
-                        <li class="pl-4">CFD, open-channel flow, thermal analysis</li>
-                        <li class="font-semibold">Electronics:</li>
-                        <li class="pl-4">Circuit design, PCB design, sensor integration</li>
-                        <li class="font-semibold">Mechanical Design:</li>
-                        <li class="pl-4">GD&T, DFM, product development</li>
-                    </ul>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="font-bold text-lg mb-4">Manufacturing & Prototyping</h3>
-                    <ul class="space-y-2">
-                        <li class="font-semibold">Advanced Manufacturing:</li>
-                        <li class="pl-4">CNC machining, 3D printing (FDM, SLA)</li>
-                        <li class="font-semibold">Electronics Assembly:</li>
-                        <li class="pl-4">PCB fabrication, SMT/BGA soldering</li>
-                        <li class="font-semibold">Traditional Methods:</li>
-                        <li class="pl-4">Machining, welding, laser cutting</li>
-                        <li class="font-semibold">Quality Control:</li>
-                        <li class="pl-4">Test equipment operation, validation testing</li>
-                    </ul>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="font-bold text-lg mb-4">Professional Expertise</h3>
-                    <ul class="space-y-2">
-                        <li class="font-semibold">Project Management:</li>
-                        <li class="pl-4">Timeline & resource management</li>
-                        <li class="font-semibold">Technical Documentation:</li>
-                        <li class="pl-4">Specifications, test procedures, design reviews</li>
-                        <li class="font-semibold">Security & Development:</li>
-                        <li class="pl-4">Security clearance eligible, defense experience</li>
-                        <li class="font-semibold">Professional Growth:</li>
-                        <li class="pl-4">Machine learning, AI applications</li>
-                    </ul>
+                <div class="project-content">
+                    <p>Led the end-to-end development of a Pelton wheel turbine, from initial theoretical calculations through to final manufacture. Applied fluid dynamics principles to optimise bucket geometry and flow characteristics, incorporating detailed momentum equations and velocity calculations. Leveraged advanced manufacturing techniques, including 3D printing technology, to produce complex curved components while maintaining precise geometric specifications. The project showcased strong capabilities in theoretical analysis, CAD design, and practical problem-solving, resulting in a fully functional turbine that successfully converted fluid power to kinetic energy. Demonstrated effective collaboration with technical specialists and proficiency in bridging theoretical design with practical manufacturing constraints.</p>
                 </div>
             </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center section-heading">Education</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <h3 class="text-2xl font-bold mb-6">University of Exeter</h3>
-                <p class="text-lg text-gray-700 mb-6">BEng Mechanical Engineering (2:1) | Graduated July 2023</p>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h4 class="font-bold text-lg mb-4">Specialization Areas</h4>
-                        <div class="space-y-4">
-                            <div>
-                                <p class="font-semibold">Robotics & Control:</p>
-                                <p class="pl-4">Electronics (91%), Mechatronics, Control Systems</p>
-                            </div>
-                            <div>
-                                <p class="font-semibold">Analysis & Computation:</p>
-                                <p class="pl-4">Mathematical Modelling (85%), Engineering Mathematics (77%)</p>
-                            </div>
-                            <div>
-                                <p class="font-semibold">Fluid Systems:</p>
-                                <p class="pl-4">Thermodynamics and Heat Transfer (79%), Fluid Dynamics</p>
-                            </div>
-                            <div>
-                                <p class="font-semibold">Advanced Manufacturing:</p>
-                                <p class="pl-4">Finite Element Analysis (79%), Materials (74%)</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-bold text-lg mb-4">Key Achievements</h4>
-                        <ul class="space-y-3">
-                            <li>• Defense industry project experience</li>
-                            <li>• Extensive manufacturing workshop practice</li>
-                            <li>• Self-directed advanced analysis studies</li>
-                            <li>• Engineering competition participation</li>
-                        </ul>
-                    </div>
+            <div class="project">
+                <h3 class="project-title">Liquid-Cooled Computer Case</h3>
+                <div class="project-media">
+                    <figure>
+                        <img src="computer case.png" alt="Liquid-Cooled Computer Case Design">
+                        <figcaption>Custom computer case design with integrated cooling</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="computer case 1.png" alt="Liquid-Cooled Computer Case Implementation">
+                        <figcaption>Final implementation with liquid cooling system</figcaption>
+                    </figure>
+                </div>
+                <div class="project-content">
+                    <p>Led the end-to-end development of a custom liquid-cooled computer case incorporating innovative aquarium integration, from initial client consultation through to final delivery. Conducted comprehensive client requirements analysis to establish specific performance metrics focusing on noise reduction, thermal management, and aesthetic integration. Executed detailed material research and selection process to optimise cooling efficiency while minimising acoustic output. Utilised CAD software for design development and validation, implementing 3D printing technologies for prototype components to ensure cost-effective manufacturability. Successfully delivered a final product that exceeded thermal performance requirements for overclocked components while maintaining aesthetic objectives, demonstrating expertise in thermal design, client management, and prototype development.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-     <!-- Additional Experience Section -->
-    <section id="experience" class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center section-heading">Additional Experience</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <ul class="space-y-4 text-lg">
-                    <li>• Defense industry project experience</li>
-                    <li>• Extensive manufacturing workshop practice</li>
-                    <li>• Self-directed advanced analysis studies</li>
-                    <li>• Engineering competition participation</li>
-                </ul>
+        <section class="section">
+            <h2 class="section-title">Software Projects</h2>
+            
+            <div class="project">
+                <h3 class="project-title">Market-Making Trading Bot</h3>
+                <div class="project-content">
+                    <p>Designed and implemented a direction-neutral cryptocurrency market-making bot, leveraging Python programming and financial market expertise. Developed sophisticated algorithms for order book analysis, spread optimization, and automated trade execution, incorporating comprehensive risk management protocols including position limits and dynamic stop-loss mechanisms. Engineered the system for deployment on Raspberry Pi architecture, optimising for continuous operation and cost efficiency. Successfully implemented real-time market analysis capabilities and automated decision-making processes, demonstrating expertise in algorithmic trading, financial technology, and systematic risk management. The project showcased strong capabilities in Python development, financial market analysis, and the practical implementation of automated trading strategies.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p class="mb-4">© 2024 Zachary Smith. All rights reserved.</p>
-            <div class="flex justify-center space-x-4">
-                <a href="mailto:zsmithwk@outlook.com" class="hover:text-gray-300">Email</a>
-                <a href="https://www.linkedin.com/in/z--smith/" class="hover:text-gray-300">LinkedIn</a>
+        <section class="section">
+            <h2 class="section-title">Competition & Awards</h2>
+            
+            <div class="project">
+                <h3 class="project-title">Engineering Education Scheme - 'The Protector'</h3>
+                <div class="project-content">
+                    <p>Led a team project through the Engineering Education Scheme (EES) to develop an innovative proximity-based object protection system, achieving the prestigious CREST Gold Award. Designed and implemented an escalating response security system incorporating multiple protective mechanisms, from initial warnings to active deterrents. Managed all project phases including concept development, prototype creation, and final implementation, while coordinating team activities and maintaining project momentum. Successfully integrated various sensors and control systems to create a responsive and reliable protection solution, demonstrating expertise in system design, team leadership, and practical engineering implementation. The project showcased strong capabilities in project management, technical problem-solving, and effective team collaboration.</p>
+                </div>
             </div>
-        </div>
-    </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+            <div class="project">
+                <h3 class="project-title">Rampaging Chariots</h3>
+                <div class="project-content">
+                    <p>Participated in the prestigious Rampaging Chariots robotics competition in partnership with Leonardo (formerly Selex ES), contributing significantly to the team's electronics development and implementation. Specialised in circuit assembly and soldering for the robot's control systems, ensuring reliable electrical connections and system stability. Collaborated within a multi-disciplinary team to develop a competitive robotic platform, combining mechanical design with electronic control systems. The project demonstrated practical electronics expertise, attention to detail in component assembly, and effective teamwork in a competitive engineering environment.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
